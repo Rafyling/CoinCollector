@@ -7,8 +7,14 @@ public class CoinCollector : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            CoinCounter counter = FindAnyObjectByType<CoinCounter>();
+
+            if (counter != null)
+            {
+                counter.AddCoin();
+            }
+
             Destroy(gameObject);
         }
     }
 }
-
